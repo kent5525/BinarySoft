@@ -1,0 +1,70 @@
+﻿<%@ Master Language="VB" MasterPageFile="~/Master1.Master" AutoEventWireup="false" CodeBehind="technician.master.vb" Inherits="test1.technician" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+     <style>
+        .dropbtn {
+            background-color: #222222;
+            color: #999999;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        }
+
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+                .dropdown-content a:hover {
+                    background-color: #f1f1f1;
+                }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #222222;
+            color: white;
+        }
+    </style>
+    <br /><br /><br />
+    <div class="dropdown">
+        <button class="dropbtn"><i class="fa fa-cogs"></i>&nbsp;Manage FAQ</button>
+        <div class="dropdown-content">
+            <a runat="server" href="~/FAQ/FAQ.aspx" >View FAQ</a>
+            <a runat="server" href="~/technician/manageFAQ.aspx" >Manage FAQ</a>
+            <a runat="server" href="~/FAQ/addFAQ.aspx" >Add FAQ</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn"><i class="fa fa-tasks"></i>&nbsp;Issue</button>
+        <div class="dropdown-content">
+             <a runat="server" href="~/technician/Issue/IssueList.aspx" >Issue List</a>
+             <a runat="server" href="~/technician/Issue/IssueAllList.aspx" >Issue All List </a>
+            <a runat="server" href="~/technician/Issue/AddIssue.aspx" >Add Issue </a>
+           
+        </div>
+    </div>
+    
+    
+    <asp:ContentPlaceHolder ID="MainContent2" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>

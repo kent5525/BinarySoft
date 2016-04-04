@@ -1,0 +1,76 @@
+﻿<%@ Master Language="VB" MasterPageFile="~/Master1.Master" AutoEventWireup="false" CodeBehind="customer.master.vb" Inherits="test1.customer" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+     <style>
+        .dropbtn {
+            background-color: #222222;
+            color: #999999;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        }
+
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+                .dropdown-content a:hover {
+                    background-color: #f1f1f1;
+                }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #222222;
+            color: white;
+        }
+    </style>
+    <br /><br /><br />
+   <div class="dropdown">
+        <button class="dropbtn"><i class="fa fa-users"></i>&nbsp;Users</button>
+        <div class="dropdown-content">
+            <a runat="server" href="~/customer/UserDetail.aspx" >User Detail</a>
+            
+           
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn"><i class="fa fa-tasks"></i>&nbsp;Issue</button>
+        <div class="dropdown-content">
+             <a runat="server" href="~/customer/Issue/IssueList.aspx" >Issue List</a>
+        
+           
+        </div>
+    </div>
+    
+    <div class="dropdown">
+        <button class="dropbtn"><i class="fa fa-registered"></i>&nbsp;Registered Product</button>
+        <div class="dropdown-content">
+            <a runat="server" href="~/customer/RegisterProductList.aspx">Registered Product List</a>
+             <a runat="server" href="~/customer/RegisterProduct.aspx">Register Product </a>
+            
+        </div>
+    </div>
+    <asp:ContentPlaceHolder ID="MainContent2" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>

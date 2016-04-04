@@ -1,0 +1,78 @@
+﻿<%@ Master Language="VB" AutoEventWireup="true" CodeBehind="Master1.master.vb" Inherits="test1.Master1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <style>
+        .footer {
+            position: inherit;
+            bottom: 0;
+            width: auto;
+            height: 30px;
+        }
+    </style>
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    
+    <link href="css/font-awesome.css" rel="stylesheet" />
+    <link href="favicon.png" rel="icon" type="image/x-icon" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/">BinarySoft
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a runat="server" href="~/">Home</a></li>
+                         <li><a runat="server" href="~/FAQ/FAQ.aspx">FAQ</a></li>
+                       
+
+                    </ul>
+                    <asp:LoginView runat="server" ViewStateMode="Disabled">
+                        <AnonymousTemplate>
+                            <ul class="nav navbar-nav navbar-right">
+
+                                <li><a runat="server" href="Register.aspx">Register</a></li>
+                                <li><a runat="server" href="Login.aspx"><i class="fa fa-sign-in"></i>&nbsp;Log in</a></li>
+
+                            </ul>
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a runat="server" href="#"><i class="fa fa-user"></i>&nbsp;Hello, <%: Context.User.Identity.Name%></a></li>                                                                               
+
+                                <li>
+                                    <asp:LoginStatus ID="LoginStatus1" runat="server" />                                   
+                                </li>
+                            </ul>
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+                </div>
+            </div>
+        </div>
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+               
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer class="footer">
+                <p>&copy; <%: DateTime.Now.Year %> - BinarySoft TechSupport</p>
+            </footer>
+        </div>
+        <script src="Scripts/jquery-1.9.1.min.js"></script>
+        <script src="Scripts/bootstrap.min.js"></script>
+    </form>
+</body>
+</html>
